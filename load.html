@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+    <title>远见世界，乐在东盟成</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+        !function (n) {
+            var e = n.document,
+                t = e.documentElement,
+                i = 640,
+                d = i / 100,
+                o = "orientationchange" in n ? "orientationchange" : "resize",
+                a = function () {
+                    var n = t.clientWidth || 320;
+                    n > 640 && (n = 640),
+                        t.style.fontSize = n / d + "px"
+                };
+            e.addEventListener && (n.addEventListener(o, a, !1), e.addEventListener("DOMContentLoaded", a, !1))
+        }(window);
+
+        function orient() {
+            if (window.orientation == 90 || window.orientation == -90) {
+                return false;
+            } else if (window.orientation == 0 || window.orientation == 180) {
+                orientation = 'portrait';
+                $("p").text("竖屏");
+                return false;
+            }
+        }
+
+        $(function () {
+            orient();
+        })
+
+        $(window).on('orientationchange', function (e) {
+            orient();
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <style>
+        #load {
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #container {
+            width: 100%;
+            background-image: url("img/bg.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        #container > #container_content {
+            transform: translate(0, 2rem);
+            padding: 0 30px;
+            z-index: 9;
+        }
+
+        #container_content .pe-img img {
+            width: 60%;
+            height: auto;
+        }
+
+        #container_content .content_img {
+            width: auto;
+        }
+
+        #container_content .content_img:last-child {
+            margin-left: 1rem;
+        }
+
+        #container_content .content_img:first-child img {
+            height: 2.4rem;
+        }
+
+        #container_content .content_img:last-child img {
+            height: 1rem;
+        }
+
+        #container_bottom {
+            transform: translate(0.4rem, 2rem);
+            z-index: 9;
+        }
+
+        #container_bottom .content_img:first-child img {
+            height: 1rem;
+        }
+
+        #container_bottom .content_img:last-child {
+            margin-top: 0.16rem;
+            height: 0.5rem;
+        }
+
+        #themAnimation {
+            transform-origin: center bottom;
+            animation: themAnimation 2s;
+            -moz-animation: themAnimation 2s;
+            -webkit-animation: themAnimation 2s;
+        }
+
+        .bg-bottom {
+            background: url("img/bg-bt.png") 0 0 no-repeat;
+            width: 100%;
+            height: 3rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-size: 100%;
+        }
+
+        #sloganAnimation {
+            animation: sloganAnimation 1s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 2s;
+            animation-iteration-count: 3;
+            -moz-animation: sloganAnimation 1s;
+            -moz-animation-timing-function: ease-in-out;
+            -moz-animation-delay: 2s;
+            -moz-animation-iteration-count: 3;
+            -webkit-animation: sloganAnimation 1s;
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-delay: 2s;
+            -webkit-animation-iteration-count: 3;
+        }
+
+        #sellAnimation {
+            animation: sellAnimation 1s;
+            -moz-animation: sellAnimation 1s;
+            -webkit-animation: sellAnimation 1s;
+        }
+
+        @keyframes themAnimation {
+
+            from,
+            20%,
+            53%,
+            80%,
+            to {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -30px, 0);
+            }
+
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -15px, 0);
+            }
+
+            90% {
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+
+        @keyframes sloganAnimation {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes sellAnimation {
+            20% {
+                transform: rotate3d(0, 0, 1, 15deg);
+            }
+
+            40% {
+                transform: rotate3d(0, 0, 1, -10deg);
+            }
+
+            60% {
+                transform: rotate3d(0, 0, 1, 5deg);
+            }
+
+            80% {
+                transform: rotate3d(0, 0, 1, -5deg);
+            }
+
+            to {
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+        }
+
+        #audio_btn {
+            width: 44px;
+            height: 44px;
+            background-image: url(img/play.svg);
+            background-size: contain;
+            position: fixed;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+        }
+
+        .rotate {
+            -webkit-animation: rotating 1.2s linear infinite;
+            -moz-animation: rotating 1.2s linear infinite;
+            -o-animation: rotating 1.2s linear infinite;
+            animation: rotating 1.2s linear infinite
+        }
+
+        @-webkit-keyframes rotating {
+            from {
+                -webkit-transform: rotate(0)
+            }
+            to {
+                -webkit-transform: rotate(360deg)
+            }
+        }
+
+        @keyframes rotating {
+            from {
+                transform: rotate(0)
+            }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @-moz-keyframes rotating {
+            from {
+                -moz-transform: rotate(0)
+            }
+            to {
+                -moz-transform: rotate(360deg)
+            }
+        }
+
+        @media only screen and (width: 375px) and (min-height: 690px) {
+            #container_bottom {
+                transform: translate(0.4rem, 3rem)
+            }
+
+            #container_content .content_img {
+                margin: .5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="load" onclick="javascript:window.location.href='paint.html'">
+    <div id="container">
+        <div id="container_content">
+            <div id="themAnimation" class="pe-img">
+                <img src="img/pe.png">
+            </div>
+            <div id="themAnimation" class="content_img">
+                <img src="img/them.png">
+            </div>
+            <div id="sloganAnimation" class="content_img">
+                <img src="img/glodBuilding.png">
+            </div>
+        </div>
+        <div id="container_bottom">
+            <div id="sellAnimation" class="content_img">
+                <img src="img/btn.png">
+            </div>
+        </div>
+        <div class="bg-bottom"></div>
+
+
+    </div>
+
+
+</div>
+
+<div id="audio_btn" class="rotate">
+    <audio loop src="mp3/TroubleMaker.mp3" id="media" autoplay="" preload=""></audio>
+</div>
+
+<script>
+    var x = document.getElementById("media");
+    $(function () {
+        $("#audio_btn").click(function () {
+            $(this).toggleClass("rotate"); //控制音乐图标 自转或暂停
+
+            //控制背景音乐 播放或暂停
+            if ($(this).hasClass("rotate")) {
+                x.play();
+            } else {
+                x.pause();
+            }
+        })
+    });
+</script>
+</body>
+</html>
